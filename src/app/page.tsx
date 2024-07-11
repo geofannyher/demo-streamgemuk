@@ -3,42 +3,42 @@
 import React, { useEffect, useRef, useState } from "react";
 const PlayVideo: React.FC = () => {
   const video1 =
-    "https://res.cloudinary.com/dp8ita8x5/video/upload/v1719311476/videoStream/new/lhd7y8lzdevwrke6fxyg.mp4";
+    "https://res.cloudinary.com/dp8ita8x5/video/upload/v1720684062/videoStream/gemuk/smm6v4h02drmcuzlxzud.mp4";
   const video2 =
-    "https://res.cloudinary.com/dp8ita8x5/video/upload/v1719369835/videoStream/new/zfactesihab6eaj6nvi5.mp4";
+    "https://res.cloudinary.com/dp8ita8x5/video/upload/v1720684081/videoStream/gemuk/xu2xbiwer4zadnzpv3ki.mp4";
 
   const [currentVideo, setCurrentVideo] = useState(video1);
   const [audioUrl, setAudioUrl] = useState("");
   const audioRef = useRef<HTMLAudioElement>(null);
 
-  // const connectToStream = () => {
-  //   const eventSource = new EventSource("/api/subscribeMessage");
-  //   eventSource.addEventListener("message", (event) => {
-  //     console.log("Received message event:", event);
-  //     const newAudioUrl = event.data;
-  //     if (newAudioUrl) {
-  //       setAudioUrl(newAudioUrl);
-  //     } else {
-  //       console.error("Received invalid audio URL");
-  //     }
-  //   });
+  const connectToStream = () => {
+    const eventSource = new EventSource("/api/subscribeMessage");
+    eventSource.addEventListener("message", (event) => {
+      console.log("Received message event:", event);
+      const newAudioUrl = event.data;
+      if (newAudioUrl) {
+        setAudioUrl(newAudioUrl);
+      } else {
+        console.error("Received invalid audio URL");
+      }
+    });
 
-  //   eventSource.addEventListener("error", (error) => {
-  //     console.error("EventSource error:", error);
-  //     eventSource.close();
-  //     setTimeout(connectToStream, 1); // Use 1 second timeout to prevent rapid reconnection attempts
-  //   });
+    eventSource.addEventListener("error", (error) => {
+      console.error("EventSource error:", error);
+      eventSource.close();
+      setTimeout(connectToStream, 1); // Use 1 second timeout to prevent rapid reconnection attempts
+    });
 
-  //   return eventSource;
-  // };
+    return eventSource;
+  };
 
-  // useEffect(() => {
-  //   const eventSource = connectToStream();
-  //   return () => {
-  //     console.log("CLOSED");
-  //     eventSource.close();
-  //   };
-  // }, []);
+  useEffect(() => {
+    const eventSource = connectToStream();
+    return () => {
+      console.log("CLOSED");
+      eventSource.close();
+    };
+  }, []);
 
   useEffect(() => {
     if (audioRef.current && audioUrl) {

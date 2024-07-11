@@ -25,10 +25,10 @@ export async function POST(req: Request, res: NextApiResponse) {
       const channel = await connection.createChannel();
       console.log("Channel created");
 
-      await channel.assertQueue("audio_queue3", { durable: false });
+      await channel.assertQueue("audiotest1", { durable: false });
       console.log("Queue asserted");
 
-      channel.sendToQueue("audio_queue3", Buffer.from(message));
+      channel.sendToQueue("audiotest1", Buffer.from(message));
       console.log("Message sent to queue");
 
       await channel.close();
