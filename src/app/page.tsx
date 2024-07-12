@@ -1,14 +1,13 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-const PlayVideo: React.FC = () => {
-  const video1 =
-    "https://res.cloudinary.com/dp8ita8x5/video/upload/v1720684062/videoStream/gemuk/smm6v4h02drmcuzlxzud.mp4";
-  const video2 =
-    "https://res.cloudinary.com/dp8ita8x5/video/upload/v1720684081/videoStream/gemuk/xu2xbiwer4zadnzpv3ki.mp4";
 
-  const [currentVideo, setCurrentVideo] = useState(video1);
-  const [audioUrl, setAudioUrl] = useState("");
+const PlayVideo: React.FC = () => {
+  const videoUrl =
+    "https://res.cloudinary.com/dp8ita8x5/video/upload/v1720685155/videoStream/gemuk/wpoydfqeewnhdvtr9mog.mp4";
+
+  const [audioUrl, setAudioUrl] = useState<string>("");
+  const videoRef = useRef<HTMLVideoElement>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
 
   const connectToStream = () => {
@@ -18,6 +17,10 @@ const PlayVideo: React.FC = () => {
       const newAudioUrl = event.data;
       if (newAudioUrl) {
         setAudioUrl(newAudioUrl);
+        if (videoRef.current) {
+          videoRef.current.currentTime = 61; // 1 menit 1 detik
+          videoRef.current.loop = true;
+        }
       } else {
         console.error("Received invalid audio URL");
       }
@@ -26,7 +29,7 @@ const PlayVideo: React.FC = () => {
     eventSource.addEventListener("error", (error) => {
       console.error("EventSource error:", error);
       eventSource.close();
-      setTimeout(connectToStream, 1); // Use 1 second timeout to prevent rapid reconnection attempts
+      setTimeout(connectToStream, 1000); // Use 1 second timeout to prevent rapid reconnection attempts
     });
 
     return eventSource;
@@ -52,12 +55,30 @@ const PlayVideo: React.FC = () => {
 
   const handleAudioEnded = () => {
     console.log("Audio ended");
-    setCurrentVideo(video1); // Switch back to video1 when audio ends
+    if (videoRef.current) {
+      videoRef.current.currentTime = 0;
+      videoRef.current.loop = true;
+    }
   };
 
   const handleAudioCanPlayThrough = () => {
     console.log("Audio can play through");
-    setCurrentVideo(video2); // Switch to video2 when audio starts playing
+    if (videoRef.current) {
+      videoRef.current.currentTime = 61; // 1 menit 1 detik
+      videoRef.current.loop = true;
+    }
+  };
+
+  const handleVideoTimeUpdate = () => {
+    if (videoRef.current) {
+      if (audioUrl && videoRef.current.currentTime >= 103) {
+        // 1 menit 43 detik
+        videoRef.current.currentTime = 61; // 1 menit 1 detik
+      } else if (!audioUrl && videoRef.current.currentTime >= 60) {
+        // 1 menit
+        videoRef.current.currentTime = 0;
+      }
+    }
   };
 
   return (
@@ -71,12 +92,15 @@ const PlayVideo: React.FC = () => {
         >
           <div className="flex h-full flex-col items-center justify-center">
             <div className="relative">
-              {currentVideo && (
-                <video key={currentVideo} autoPlay loop muted>
-                  <source src={currentVideo} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              )}
+              <video
+                ref={videoRef}
+                src={videoUrl}
+                autoPlay
+                muted
+                onTimeUpdate={handleVideoTimeUpdate}
+              >
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
         </div>
