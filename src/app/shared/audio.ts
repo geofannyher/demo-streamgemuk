@@ -5,11 +5,13 @@ export const audios = [
   },
   {
     name: "Cek Keranjang Kuningnya",
-    url: "https://res.cloudinary.com/dp8ita8x5/video/upload/v1720681952/videoStream/gemuk/vdvoro1xrocyihl7f3km.mp3",
+    url: "https://res.cloudinary.com/dp8ita8x5/video/upload/v1723173798/videoStream/gemuk/new/Cek%20keranjang%20kuningnya%20%282%29.mp3",
+    // url: "https://res.cloudinary.com/dp8ita8x5/video/upload/v1720681952/videoStream/gemuk/vdvoro1xrocyihl7f3km.mp3",
   },
   {
     name: "Coba Cek Gratis Ongkir",
-    url: "https://res.cloudinary.com/dp8ita8x5/video/upload/v1720681993/videoStream/gemuk/kuknewbryty21xseosoc.mp3",
+    url: "https://res.cloudinary.com/dp8ita8x5/video/upload/v1723174115/videoStream/gemuk/new/coba%20cek%20gratis%20ongkir%20%282%29.mp3",
+    // url: "https://res.cloudinary.com/dp8ita8x5/video/upload/v1720681993/videoStream/gemuk/kuknewbryty21xseosoc.mp3",
   },
   {
     name: "F999+headphone sound card",
@@ -17,15 +19,17 @@ export const audios = [
   },
   {
     name: "Garansi 12 Bulan",
-    url: "https://res.cloudinary.com/dp8ita8x5/video/upload/v1720682061/videoStream/gemuk/nqkhsfwqoud0kvgsnh0j.mp3",
+    url: "https://res.cloudinary.com/dp8ita8x5/video/upload/v1723174025/videoStream/gemuk/new/garansi%2012%20bulan%20%282%29.mp3",
   },
   {
     name: "Halo Selamat Datang",
-    url: "https://res.cloudinary.com/dp8ita8x5/video/upload/v1720682099/videoStream/gemuk/wlnvtw3vqozaqsfw70su.mp3",
+    url: "https://res.cloudinary.com/dp8ita8x5/video/upload/v1723173972/videoStream/gemuk/new/halo%20selamat%20datang%20%282%29.mp3",
+    // url: "https://res.cloudinary.com/dp8ita8x5/video/upload/v1720682099/videoStream/gemuk/wlnvtw3vqozaqsfw70su.mp3",
   },
   {
     name: "Harga Sudah Promo",
-    url: "https://res.cloudinary.com/dp8ita8x5/video/upload/v1720682159/videoStream/gemuk/o2mitqsdyuay53i0wpzl.mp3",
+    url: "https://res.cloudinary.com/dp8ita8x5/video/upload/v1723174068/videoStream/gemuk/new/harga%20sudah%20promo%20%282%29.mp3",
+    // url: "https://res.cloudinary.com/dp8ita8x5/video/upload/v1720682159/videoStream/gemuk/o2mitqsdyuay53i0wpzl.mp3",
   },
   {
     name: "Hyundai T26 Wireless TWS Earphone Bluetooth",
@@ -68,11 +72,13 @@ export const audios = [
     url: "https://res.cloudinary.com/dp8ita8x5/video/upload/v1721103358/videoStream/gemuk/new/V8S%20sound%20card%20singing%20recording%20professional.mp3",
   },
   {
-    name: "Yang Baru  Datang Cek Etalase",
-    url: "https://res.cloudinary.com/dp8ita8x5/video/upload/v1720682565/videoStream/gemuk/kthy8shkj7yidlw0jawy.mp3",
+    name: "Yang Baru Datang Cek Etalase",
+    url: "https://res.cloudinary.com/dp8ita8x5/video/upload/v1723173917/videoStream/gemuk/new/yang%20baru%20datang%20cek%20etalase%20%282%29.mp3",
+    // url: "https://res.cloudinary.com/dp8ita8x5/video/upload/v1720682565/videoStream/gemuk/kthy8shkj7yidlw0jawy.mp3",
   },
   {
     name: "Yuk Tanya Aja Kak",
-    url: "https://res.cloudinary.com/dp8ita8x5/video/upload/v1720682592/videoStream/gemuk/i2sdxkfzwfdcl3v48gyx.mp3",
+    url: "https://res.cloudinary.com/dp8ita8x5/video/upload/v1723173872/videoStream/gemuk/new/yuk%20tanya%20aja%20kak%20%282%29.mp3",
+    // url: "https://res.cloudinary.com/dp8ita8x5/video/upload/v1720682592/videoStream/gemuk/i2sdxkfzwfdcl3v48gyx.mp3",
   },
 ];
