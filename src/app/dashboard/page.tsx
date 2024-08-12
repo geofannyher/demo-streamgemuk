@@ -143,7 +143,7 @@ const SubmitMessage: React.FC = () => {
           </div>
         </div>
 
-        <div className="w-full max-h-96 overflow-y-scroll space-y-2">
+        <div className="w-full space-y-2">
           {audios.map((audio, index) => (
             <div className="flex gap-2 justify-center" key={index}>
               <button
