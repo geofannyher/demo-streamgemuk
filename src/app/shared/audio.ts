@@ -116,8 +116,8 @@ export const audios = [
     url: "https://res.cloudinary.com/dp8ita8x5/video/upload/v1723457354/videoStream/cewek/COBA%20CEK%20GRATIS%20ONGKIR.mp3",
   },
   {
-    name: "Lenovo Thinkplus XT80 True Wireless Bluetooth Earphone",
-    url: "https://res.cloudinary.com/dp8ita8x5/video/upload/v1721103206/videoStream/gemuk/new/Lenovo%20Thinkplus%20XT80%20True%20Wireless%20Bluetooth%20Earphone.mp3",
+    name: "Stacey Jelly Lip Tint",
+    url: "https://res.cloudinary.com/dp8ita8x5/video/upload/v1723461375/videoStream/cewek/Stacey%20Jelly%20Lip%20Tint.mp3",
   },
   {
     name: "CLOSING",
