@@ -143,21 +143,20 @@ const SubmitMessage: React.FC = () => {
           </div>
         </div>
 
-        <div className="w-full space-y-2">
+        <div className="w-full max-h-96 overflow-y-scroll space-y-2">
           {audios.map((audio, index) => (
             <div className="flex gap-2 justify-center" key={index}>
-              {/* {audio && (
-                <audio controls className="audio-player">
-                  <source src={audio?.url} type="audio/mpeg" />
-                  Your browser does not support the audio element.
-                </audio>
-              )} */}
               <button
                 onClick={() => handleSubmit(audio?.url, index)}
-                className={`rounded-full w-full lg:w-1/2 flex justify-center gap-2 text-sm font-semibold items-center ${
+                className={`rounded-full w-full lg:w-[65%] flex justify-center gap-2 text-sm font-semibold items-center ${
                   loadingAudioIndex === index ? "bg-gray-500" : "bg-violet-600"
-                } hover:bg-violet-900 transition duration-300 text-white p-1 `}
+                } hover:bg-violet-900 transition duration-300 text-white p-1`}
                 disabled={loadingAudioIndex === index}
+                style={{
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                }}
               >
                 {loadingAudioIndex === index ? (
                   <>

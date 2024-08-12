@@ -4,8 +4,8 @@ import React, { useEffect, useRef, useState } from "react";
 
 const PlayVideo: React.FC = () => {
   const videoUrl =
-    "https://res.cloudinary.com/dp8ita8x5/video/upload/v1723175258/videoStream/gemuk/fix%20no%20sound.mp4";
-
+    // "https://res.cloudinary.com/dp8ita8x5/video/upload/v1723175258/videoStream/gemuk/fix%20no%20sound.mp4";
+    "https://res.cloudinary.com/dp8ita8x5/video/upload/v1723459999/videoStream/cewek/videofll.mp4";
   const [audioUrl, setAudioUrl] = useState<string>("");
   const videoRef = useRef<HTMLVideoElement>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
@@ -71,7 +71,7 @@ const PlayVideo: React.FC = () => {
 
   const handleVideoTimeUpdate = () => {
     if (videoRef.current) {
-      if (audioUrl && videoRef.current.currentTime >= 103) {
+      if (audioUrl && videoRef.current.currentTime >= 150) {
         // 1 menit 43 detik
         videoRef.current.currentTime = 61; // 1 menit 1 detik
       } else if (!audioUrl && videoRef.current.currentTime >= 60) {
